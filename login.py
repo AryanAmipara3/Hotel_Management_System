@@ -133,7 +133,7 @@ class Login_Window:
                     smtp_server = "--enter your smtp server name--"  # Update with your SMTP server details
                     port = 587  # Update with your SMTP server port (587 is commonly used for TLS)
                     sender_email = "--enter your email address--"  # Update with your email address
-                    sender_password = "--enter your email password--"  # Update with your email password
+                    sender_password = "--enter your smtp server password--"  # Update with your smtp server password
 
                     # Create a secure SSL context
                     smtp = smtplib.SMTP(smtp_server, port)
