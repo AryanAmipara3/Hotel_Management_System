@@ -39,7 +39,7 @@ class Roombooking:
 
         # =================logo====================
 
-        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp") # enter path of your file
+        img2=Image.open(r"----enter your path here----\llogo.webp") # enter path of your file
         img2=img2.resize((100,40),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
 
@@ -315,7 +315,7 @@ class Roombooking:
 
         # ==================Right Side Image======================
 
-        img3=Image.open(r"----enter your path here----\hotel_management\hotel images\room1.jpg") # enter path of your file
+        img3=Image.open(r"----enter your path here----\room1.jpg") # enter path of your file
         img3=img3.resize((500,300),Image.LANCZOS)
         self.photoimg3=ImageTk.PhotoImage(img3)
 
@@ -867,7 +867,7 @@ class Roombooking:
                 msg.attach(MIMEText(message, 'plain'))
 
                 # Attach the image to the email
-                image_path = r'----enter your path here----\hotel_management\Qr.jpg'  # Update with the correct path to your image file  # enter path of your file
+                image_path = r'----enter your path here----\Qr.jpg'  # Update with the correct path to your image file  # enter path of your file
                 with open(image_path, 'rb') as img:
                     img_data = img.read()
                     image = MIMEImage(img_data, name=os.path.basename(image_path))
