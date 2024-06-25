@@ -21,7 +21,7 @@ class DetailsRoom:
 
         # =================logo====================
 
-        img2=Image.open(r"enter your path    \hotel_management\hotel images\llogo.webp") #enter path of your file
+        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp") # enter path of your file
 
         img2=img2.resize((100,40),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
@@ -180,8 +180,7 @@ class DetailsRoom:
 
     def check_room_exists(self, room_number):
         conn = mysql.connector.connect(
-            host="localhost", username="root", password="enter your database password", database="management"
-        )
+            host="localhost", username="root", password="--enter your database password--", database="management")
         my_cursor = conn.cursor()
         my_cursor.execute("SELECT COUNT(*) FROM details WHERE roomNo = %s", (room_number,))
         count = my_cursor.fetchone()[0]
@@ -195,7 +194,7 @@ class DetailsRoom:
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
 
                 # Check if the room number already exists in the 'details' table
@@ -224,7 +223,7 @@ class DetailsRoom:
     # -------------------Fetch Data-------------------
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+        conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
         my_cursor=conn.cursor()
         # Fetch all room numbers from the 'room' table
         my_cursor.execute("SELECT roomNo FROM room")
@@ -259,7 +258,7 @@ class DetailsRoom:
         if self.var_floor.get()=="" or self.var_floor.get()=="Enter Floor No." or self.var_roomNo.get()=="" or self.var_roomNo.get()=="Enter Room No." or self.var_roomType.get()=="" or self.var_roomType.get()=="Select Room Type":
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             my_cursor.execute("Update details set Floor=%s,RoomType=%s where RoomNo=%s",(
 
@@ -280,7 +279,7 @@ class DetailsRoom:
     def delete(self):
         delete=messagebox.askyesno("Hotel Management System","Do you want to delete this Room Details",parent=self.root)
         if delete>0:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             query="delete from details where RoomNo=%s"
             value=(self.var_roomNo.get(),)

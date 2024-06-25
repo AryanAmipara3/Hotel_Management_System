@@ -37,7 +37,7 @@ class Cust_Win:
 
         # =================logo====================
 
-        img2=Image.open(r"enter path    \hotel_management\hotel images\llogo.webp")  # enter path of your file
+        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp")  # enter path of your file
         img2=img2.resize((100,40),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
 
@@ -357,7 +357,7 @@ class Cust_Win:
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",username="root",password="  enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
                 my_cursor.execute("insert into customer values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
                                                                                     self.var_ref.get(),
@@ -396,7 +396,7 @@ class Cust_Win:
     # -------------------Fetch Data-------------------
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="  enter your database password",database="management")
+        conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("select * from customer")
         rows=my_cursor.fetchall()
@@ -432,7 +432,7 @@ class Cust_Win:
         if self.var_mobile.get()=="" or self.var_mobile.get()=="Enter Mobile number" or self.var_father.get()=="" or self.var_father.get()=="Enter Customer's Father name" or self.var_cust_name.get()=="" or self.var_cust_name.get()=="Enter Customer name" or self.var_gender.get()=="" or self.var_gender.get()=="Enter Gender" or self.var_post.get()=="" or self.var_post.get()=="Enter Postcode" or self.var_email.get()=="" or self.var_email.get()=="Enter Email" or self.var_id_number.get()=="" or self.var_id_number.get()=="Enter Id number" or self.var_address.get()=="" or self.var_address.get()=="Enter Address" or self.var_id_proof.get()=="" or self.var_id_proof.get()=="Enter Id Proof Type" or self.var_nationality.get()=="" or self.var_nationality.get()=="Enter Customer's Nationality":
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="  enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             my_cursor.execute("Update Customer set Name=%s,father=%s,Gender=%s,PostCode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",(
 
@@ -472,7 +472,7 @@ class Cust_Win:
     def delete(self):
         delete=messagebox.askyesno("Hotel Management System","Do you want to delete this customer",parent=self.root)
         if delete>0:
-            conn=mysql.connector.connect(host="localhost",username="root",password="  enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             query="delete from customer where Ref=%s"
             value=(self.var_ref.get(),)
@@ -527,7 +527,7 @@ class Cust_Win:
             messagebox.showerror("Error","Please Enter the value to search the result",parent=self.root)
 
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="  enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
 
             my_cursor.execute("select * from customer where "+str(self.search_var.get())+" LIKE '%"+str(self.txt_search.get())+"%'")

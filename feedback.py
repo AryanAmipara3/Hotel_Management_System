@@ -29,7 +29,7 @@ class Feedback:
 
         # =================logo====================
 
-        img2=Image.open(r"enter path    \hotel_management\hotel images\llogo.webp") #enter path of your file
+        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp") # enter path of your file
         img2=img2.resize((100,40),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
 
@@ -71,7 +71,7 @@ class Feedback:
         # Send a QR to user's email that will collect the Feedback From the user
         try:
             # Connect to the database
-            conn = mysql.connector.connect(host="localhost", username="root", password=" enter your database password", database="management")
+            conn = mysql.connector.connect(host="localhost", username="root", password="--enter your database password--", database="management")
             my_cursor = conn.cursor()
 
             # Fetch customer's email from the database
@@ -83,10 +83,10 @@ class Feedback:
             if row:
                 customer_email = row[0]  # Extract the email from the fetched row
                 # Set up the SMTP server
-                smtp_server = "enter your smtp server name "  # Update with your SMTP server details
+                smtp_server = "--enter your smtp server name--"  # Update with your SMTP server details
                 port = 587  # Update with your SMTP server port (587 is commonly used for TLS)
-                sender_email = " enter your email address"  # Update with your email address
-                sender_password = " enter your password"  # Update with your email password
+                sender_email = "--enter your email address--"  # Update with your email address
+                sender_password = "--enter your email password--"  # Update with your email password
 
                 # Create a secure SSL context
                 smtp = smtplib.SMTP(smtp_server, port)
@@ -115,7 +115,7 @@ class Feedback:
                 msg.attach(MIMEText(message, 'plain'))
 
                 # Attach the image to the email
-                image_path = r'enter path'  # Update with the correct path to your image file
+                image_path = r'enter path of your image of QR'  # Update with the correct path to your image file
                 with open(image_path, 'rb') as img:
                     img_data = img.read()
                     image = MIMEImage(img_data, name=os.path.basename(image_path))

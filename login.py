@@ -22,14 +22,14 @@ class Login_Window:
         self.root.title("Login")
         self.root.geometry("1550x800+0+0")
         
-        self.bg=ImageTk.PhotoImage(file=r" enter your path    \hotel_management\hotel images\SDT_Zoom-Backgrounds_April-8_Windansea-1-logo-1.jpg ")# enter path of your file
+        self.bg=ImageTk.PhotoImage(file=r"----enter your path here----\hotel_management\hotel images\SDT_Zoom-Backgrounds_April-8_Windansea-1-logo-1.jpg ")  # enter path of your file
         lbl_bg=Label(self.root,image=self.bg)
         lbl_bg.place(x=0,y=0,relwidth=1,relheight=1)
         
         frame=Frame(self.root,bg="black")
         frame.place(x=610,y=170,width=340,height=450)
         
-        img1=Image.open(r" enter your path    \hotel_management\hotel images\LoginIconAppl.png")# enter path of your file
+        img1=Image.open(r"----enter your path here----\hotel_management\hotel images\LoginIconAppl.png")  # enter path of your file
         img1=img1.resize((100,100),Image.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         lblimg1=Label(image=self.photoimage1,bg="black",borderwidth=0)
@@ -54,13 +54,13 @@ class Login_Window:
         
         # =======================Icon Images================
 
-        img2=Image.open(r" enter your path    \hotel_management\hotel images\LoginIconAppl.png")# enter path of your file
+        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\LoginIconAppl.png") # enter path of your file
         img2=img2.resize((25,25),Image.LANCZOS)
         self.photoimage2=ImageTk.PhotoImage(img2)
         lblimg1=Label(image=self.photoimage2,bg="black",borderwidth=0)
         lblimg1.place(x=650,y=323,width=25,height=25)
 
-        img3=Image.open(r" enter your path    \hotel_management\hotel images\lock-512.png")# enter path of your file
+        img3=Image.open(r"----enter your path here----\hotel_management\hotel images\lock-512.png") # enter path of your file
         img3=img3.resize((25,25),Image.LANCZOS)
         self.photoimage3=ImageTk.PhotoImage(img3)
         lblimg2=Label(image=self.photoimage3,bg="black",borderwidth=0)
@@ -92,7 +92,7 @@ class Login_Window:
         elif self.txtuser.get()=="kapu" and self.txtpass.get()=="ashu":
             messagebox.showinfo("Success","Welcome to the System",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",user="root",password="enter your database password",database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password="--enter your database password--",database="mydata")
             my_cursor=conn.cursor()
             my_cursor.execute("select * from register where fname=%s and password=%s",(
                                                                                     self.txtuser.get(), 
@@ -118,7 +118,7 @@ class Login_Window:
             # Send login details to the user's email
             try:
                 # Connect to the database
-                conn = mysql.connector.connect(host="localhost", username="root", password="enter your database password", database="mydata")
+                conn = mysql.connector.connect(host="localhost", username="root", password="--enter your database password--", database="mydata")
                 my_cursor = conn.cursor()
 
                 # Fetch user's email from the database
@@ -130,10 +130,10 @@ class Login_Window:
                 if row:
                     user_email = row[0]  # Extract the email from the fetched row
                     # Set up the SMTP server
-                    smtp_server = "smtp.gmail.com"  # Update with your SMTP server details
+                    smtp_server = "--enter your smtp server name--"  # Update with your SMTP server details
                     port = 587  # Update with your SMTP server port (587 is commonly used for TLS)
-                    sender_email = "aryanamipara3@gmail.com"  # Update with your email address
-                    sender_password = "bagtsanieskqprmk"  # Update with your email password
+                    sender_email = "--enter your email address--"  # Update with your email address
+                    sender_password = "--enter your email password--"  # Update with your email password
 
                     # Create a secure SSL context
                     smtp = smtplib.SMTP(smtp_server, port)
@@ -186,7 +186,7 @@ class Login_Window:
             messagebox.showerror("Error","Please enter the new password",parent=self.root2)
         
         else:
-            conn=mysql.connector.connect(host="localhost",user="root",password="enter your database password",database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password="--enter your database password--",database="mydata")
             my_cursor=conn.cursor()
             qury=("select * from register where fname=%s and securityQ=%s and securityA=%s")
             value=(self.txtuser.get(),self.combo_security_Q.get(),self.txt_security.get())
@@ -212,7 +212,7 @@ class Login_Window:
         if self.txtuser.get()=="":
             messagebox.showerror("Error","Please write the Email address to reset the password",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",user="root",password="enter your database password",database="mydata")
+            conn=mysql.connector.connect(host="localhost",user="root",password="--enter your database password--",database="mydata")
             my_cursor=conn.cursor()
             query=("select * from register where fname=%s")
             value=(self.txtuser.get(),)
@@ -274,14 +274,14 @@ class Register:
 
         # ==========================bg image=======================
 
-        self.bg=ImageTk.PhotoImage(file=r" enter your path    \hotel_management\hotel images\0-3450_3d-nature-wallpaper-hd-1080p-free-download-new.jpg")# enter path of your file
+        self.bg=ImageTk.PhotoImage(file=r"----enter your path here----\hotel_management\hotel images\0-3450_3d-nature-wallpaper-hd-1080p-free-download-new.jpg") # enter path of your file
 
         bg_lbl=Label(self.root,image=self.bg)
         bg_lbl.place(x=0,y=0,relwidth=1,relheight=1)
 
         # ==========================left image======================
         
-        self.bg1=ImageTk.PhotoImage(file=r" enter your path    \hotel_management\hotel images\thought-good-morning-messages-LoveSove.jpg")# enter path of your file
+        self.bg1=ImageTk.PhotoImage(file=r"----enter your path here----\hotel_management\hotel images\thought-good-morning-messages-LoveSove.jpg") # enter path of your file
 
         left_lbl=Label(self.root,image=self.bg1)
         left_lbl.place(x=50,y=100,width=470,height=550)
@@ -361,13 +361,13 @@ class Register:
 
         # ==================buttons============================
 
-        img=Image.open(r"enter your path    \hotel_management\hotel images\register-now-button1.jpg")# enter path of your file
+        img=Image.open(r"----enter your path here----\hotel_management\hotel images\register-now-button1.jpg") # enter path of your file
         img=img.resize((200,50),Image.LANCZOS)
         self.photoimage=ImageTk.PhotoImage(img)
         b1=Button(frame,image=self.photoimage,command=self.register_data,borderwidth=0,cursor="hand2")
         b1.place(x=10,y=420,width=200)
 
-        img1=Image.open(r"enter your  path   \hotel_management\hotel images\loginpng.png")# enter path of your file
+        img1=Image.open(r"----enter your path here----\hotel_management\hotel images\loginpng.png") # enter path of your file
         img1=img1.resize((200,50),Image.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         b1=Button(frame,image=self.photoimage1,command=self.return_login,borderwidth=0,cursor="hand2")
@@ -386,7 +386,7 @@ class Register:
             messagebox.showerror("Error","Please Agree our Terms and Conditions",parent=self.root)
 
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="mydata")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="mydata")
             my_cursor=conn.cursor()
             query=("select * from register where email=%s")
             value=(self.var_email.get(),)

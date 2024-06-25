@@ -39,7 +39,7 @@ class Roombooking:
 
         # =================logo====================
 
-        img2=Image.open(r"enter your path    \hotel_management\hotel images\llogo.webp")# enter path of your file
+        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp") # enter path of your file
         img2=img2.resize((100,40),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
 
@@ -195,7 +195,7 @@ class Roombooking:
         lblRoom_no=Label(labelframeleft,font=("arial",12,"bold"),text="Rooms No:",padx=2,pady=6)
         lblRoom_no.grid(row=4,column=0,sticky=W)
 
-        conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+        conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("select RoomNo from details")
         rows=my_cursor.fetchall()
@@ -315,7 +315,7 @@ class Roombooking:
 
         # ==================Right Side Image======================
 
-        img3=Image.open(r"enter your path    \hotel_management\hotel images\room1.jpg")# enter path of your file
+        img3=Image.open(r"----enter your path here----\hotel_management\hotel images\room1.jpg") # enter path of your file
         img3=img3.resize((500,300),Image.LANCZOS)
         self.photoimg3=ImageTk.PhotoImage(img3)
 
@@ -407,7 +407,7 @@ class Roombooking:
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
                 my_cursor.execute("insert into room values(%s,%s,%s,%s,%s,%s)",(
                                                                                     self.var_contact.get(),
@@ -438,7 +438,7 @@ class Roombooking:
     # -------------------Fetch Data-------------------
 
     def fetch_data(self):
-        conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+        conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
         my_cursor=conn.cursor()
         my_cursor.execute("select * from room")
         rows=my_cursor.fetchall()
@@ -469,7 +469,7 @@ class Roombooking:
         if self.var_contact.get()=="" or self.var_contact.get()=="Enter Customer Contact" or self.var_checkin.get()=="" or self.var_checkin.get()=="Select Check-in Date" or self.var_checkout.get()=="" or self.var_checkout.get()=="Select Check-out Date" or self.var_roomtype.get()=="" or self.var_roomtype.get()=="Select Room Type" or self.var_roomNo.get()=="" or self.var_roomNo.get()=="Select Room No" or self.var_meal.get()=="" or self.var_meal.get()=="Select Meal":
             messagebox.showerror("Error","All fields are required",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             my_cursor.execute("Update room set check_in=%s,check_out=%s,roomtype=%s,Contact=%s,meal=%s where roomNo=%s",(
 
@@ -502,7 +502,7 @@ class Roombooking:
     def delete(self):
         delete=messagebox.askyesno("Hotel Management System","Do you want to delete this Room",parent=self.root)
         if delete>0:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             query="delete from room where roomNo=%s"
             value=(self.var_roomNo.get(),)
@@ -546,7 +546,7 @@ class Roombooking:
         if self.var_contact.get()=="" or self.var_contact.get()=="Enter Customer Contact":
             messagebox.showerror("Error","Please enter Contact Number",parent=self.root)
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
             query=("select Name from customer where Mobile=%s")
             value=(self.var_contact.get(),)
@@ -570,7 +570,7 @@ class Roombooking:
 
                 # =============Gender=================
 
-                conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
                 query=("select Gender from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -585,7 +585,7 @@ class Roombooking:
 
                 # =============Email=================
 
-                conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
                 query=("select Email from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -600,7 +600,7 @@ class Roombooking:
 
                 # =============Nationality=================
 
-                conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
                 query=("select Nationality from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -615,7 +615,7 @@ class Roombooking:
 
                 # =============Address=================
 
-                conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+                conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
                 my_cursor=conn.cursor()
                 query=("select Address from customer where Mobile=%s")
                 value=(self.var_contact.get(),)
@@ -635,7 +635,7 @@ class Roombooking:
             messagebox.showerror("Error","Please select search option",parent=self.root)
 
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="enter your database password",database="management")
+            conn=mysql.connector.connect(host="localhost",username="root",password="--enter your database password--",database="management")
             my_cursor=conn.cursor()
 
             my_cursor.execute("select * from room where "+str(self.search_var.get())+" LIKE '%"+str(self.txt_search.get())+"%'")
@@ -819,7 +819,7 @@ class Roombooking:
         # Send bill to the user's email
         try:
             # Connect to the database
-            conn = mysql.connector.connect(host="localhost", username="root", password="enter your database password", database="management")
+            conn = mysql.connector.connect(host="localhost", username="root", password="--enter your database password--", database="management")
             my_cursor = conn.cursor()
 
             # Fetch customer's email from the database
@@ -831,10 +831,10 @@ class Roombooking:
             if row:
                 customer_email = row[0]  # Extract the email from the fetched row
                 # Set up the SMTP server
-                smtp_server = " enter your smtp  server name "  # Update with your SMTP server details
+                smtp_server = "--enter your smtp server name--"  # Update with your SMTP server details
                 port = 587  # Update with your SMTP server port (587 is commonly used for TLS)
-                sender_email = "  enter your  email address"  # Update with your email address
-                sender_password = "enter your  password "  # Update with your email password
+                sender_email = "--enter your email address--"  # Update with your email address
+                sender_password = "--enter your email password--"  # Update with your email password
 
                 # Create a secure SSL context
                 smtp = smtplib.SMTP(smtp_server, port)
@@ -867,7 +867,7 @@ class Roombooking:
                 msg.attach(MIMEText(message, 'plain'))
 
                 # Attach the image to the email
-                image_path = r'enter your path    \hotel_management\Qr.jpg'  # Update with the correct path to your image file  # enter path of your file
+                image_path = r'----enter your path here----\hotel_management\Qr.jpg'  # Update with the correct path to your image file  # enter path of your file
                 with open(image_path, 'rb') as img:
                     img_data = img.read()
                     image = MIMEImage(img_data, name=os.path.basename(image_path))
