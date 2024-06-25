@@ -21,7 +21,7 @@ class DetailsRoom:
 
         # =================logo====================
 
-        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp") # enter path of your file
+        img2=Image.open(r"----enter your path here----\llogo.webp") # enter path of your file
 
         img2=img2.resize((100,40),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
