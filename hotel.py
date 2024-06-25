@@ -14,7 +14,7 @@ class HotelManagementSystem:
 
         # =================fist img=================
 
-        img1=Image.open(r"----enter your path here----\hotel_management\hotel images\h.webp") # enter path of your file
+        img1=Image.open(r"----enter your path here----\h.webp") # enter path of your file
         img1=img1.resize((1537,140),Image.LANCZOS)
         self.photoimg1=ImageTk.PhotoImage(img1)
 
@@ -23,7 +23,7 @@ class HotelManagementSystem:
 
         # =================logo====================
 
-        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\llogo.webp") # enter path of your file
+        img2=Image.open(r"----enter your path here----\llogo.webp") # enter path of your file
         img2=img2.resize((230,140),Image.LANCZOS)
         self.photoimg2=ImageTk.PhotoImage(img2)
 
@@ -68,7 +68,7 @@ class HotelManagementSystem:
 
         # =======================right side image===================
 
-        img3=Image.open(r"----enter your path here----\hotel_management\hotel images\taj.jpg") # enter path of your file
+        img3=Image.open(r"----enter your path here----\taj.jpg") # enter path of your file
         img3=img3.resize((1302,598),Image.LANCZOS)
         self.photoimg3=ImageTk.PhotoImage(img3)
 
@@ -77,14 +77,14 @@ class HotelManagementSystem:
 
         # =========================down images=====================
 
-        img4=Image.open(r"----enter your path here----\hotel_management\hotel images\hhh.jpg") # enter path of your file
+        img4=Image.open(r"----enter your path here----\hhh.jpg") # enter path of your file
         img4=img4.resize((230,196),Image.LANCZOS)
         self.photoimg4=ImageTk.PhotoImage(img4)
 
         lbling1=Label(main_frame,image=self.photoimg4,bd=4,relief=RIDGE)
         lbling1.place(x=0,y=225,width=230,height=196)
         
-        img5=Image.open(r"----enter your path here----\hotel_management\hotel images\food.jpeg") # enter path of your file
+        img5=Image.open(r"----enter your path here----\food.jpeg") # enter path of your file
         img5=img5.resize((230,180),Image.LANCZOS)
         self.photoimg5=ImageTk.PhotoImage(img5)
 
