@@ -22,14 +22,14 @@ class Login_Window:
         self.root.title("Login")
         self.root.geometry("1550x800+0+0")
         
-        self.bg=ImageTk.PhotoImage(file=r"----enter your path here----\hotel_management\hotel images\SDT_Zoom-Backgrounds_April-8_Windansea-1-logo-1.jpg ")  # enter path of your file
+        self.bg=ImageTk.PhotoImage(file=r"----enter your path here----\SDT_Zoom-Backgrounds_April-8_Windansea-1-logo-1.jpg ")  # enter path of your file
         lbl_bg=Label(self.root,image=self.bg)
         lbl_bg.place(x=0,y=0,relwidth=1,relheight=1)
         
         frame=Frame(self.root,bg="black")
         frame.place(x=610,y=170,width=340,height=450)
         
-        img1=Image.open(r"----enter your path here----\hotel_management\hotel images\LoginIconAppl.png")  # enter path of your file
+        img1=Image.open(r"----enter your path here----\LoginIconAppl.png")  # enter path of your file
         img1=img1.resize((100,100),Image.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         lblimg1=Label(image=self.photoimage1,bg="black",borderwidth=0)
@@ -54,13 +54,13 @@ class Login_Window:
         
         # =======================Icon Images================
 
-        img2=Image.open(r"----enter your path here----\hotel_management\hotel images\LoginIconAppl.png") # enter path of your file
+        img2=Image.open(r"----enter your path here----\LoginIconAppl.png") # enter path of your file
         img2=img2.resize((25,25),Image.LANCZOS)
         self.photoimage2=ImageTk.PhotoImage(img2)
         lblimg1=Label(image=self.photoimage2,bg="black",borderwidth=0)
         lblimg1.place(x=650,y=323,width=25,height=25)
 
-        img3=Image.open(r"----enter your path here----\hotel_management\hotel images\lock-512.png") # enter path of your file
+        img3=Image.open(r"----enter your path here----\lock-512.png") # enter path of your file
         img3=img3.resize((25,25),Image.LANCZOS)
         self.photoimage3=ImageTk.PhotoImage(img3)
         lblimg2=Label(image=self.photoimage3,bg="black",borderwidth=0)
@@ -274,14 +274,14 @@ class Register:
 
         # ==========================bg image=======================
 
-        self.bg=ImageTk.PhotoImage(file=r"----enter your path here----\hotel_management\hotel images\0-3450_3d-nature-wallpaper-hd-1080p-free-download-new.jpg") # enter path of your file
+        self.bg=ImageTk.PhotoImage(file=r"----enter your path here----\0-3450_3d-nature-wallpaper-hd-1080p-free-download-new.jpg") # enter path of your file
 
         bg_lbl=Label(self.root,image=self.bg)
         bg_lbl.place(x=0,y=0,relwidth=1,relheight=1)
 
         # ==========================left image======================
         
-        self.bg1=ImageTk.PhotoImage(file=r"----enter your path here----\hotel_management\hotel images\thought-good-morning-messages-LoveSove.jpg") # enter path of your file
+        self.bg1=ImageTk.PhotoImage(file=r"----enter your path here----\thought-good-morning-messages-LoveSove.jpg") # enter path of your file
 
         left_lbl=Label(self.root,image=self.bg1)
         left_lbl.place(x=50,y=100,width=470,height=550)
@@ -361,13 +361,13 @@ class Register:
 
         # ==================buttons============================
 
-        img=Image.open(r"----enter your path here----\hotel_management\hotel images\register-now-button1.jpg") # enter path of your file
+        img=Image.open(r"----enter your path here----\register-now-button1.jpg") # enter path of your file
         img=img.resize((200,50),Image.LANCZOS)
         self.photoimage=ImageTk.PhotoImage(img)
         b1=Button(frame,image=self.photoimage,command=self.register_data,borderwidth=0,cursor="hand2")
         b1.place(x=10,y=420,width=200)
 
-        img1=Image.open(r"----enter your path here----\hotel_management\hotel images\loginpng.png") # enter path of your file
+        img1=Image.open(r"----enter your path here----\loginpng.png") # enter path of your file
         img1=img1.resize((200,50),Image.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         b1=Button(frame,image=self.photoimage1,command=self.return_login,borderwidth=0,cursor="hand2")
